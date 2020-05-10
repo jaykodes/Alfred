@@ -13,7 +13,7 @@ db = mysql.connector.connect(
 nlp = spacy.load("en")
 
 cursor = db.cursor()
-sql_temp = "INSERT INTO YOUR-TABLE (id, sentence, be_subjects, aux_subjects, question_words, verbs, subjects, sen_type) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+sql_temp = "INSERT INTO data_current (id, sentence, be_subjects, aux_subjects, question_words, verbs, subjects, sen_type) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
 
 #POS tag list:
 
