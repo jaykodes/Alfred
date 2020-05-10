@@ -6,10 +6,10 @@ import math
 
 # establishing connection to database
 db = mysql.connector.connect(
-	host="localhost",
-	user="root",
-	passwd="AdCd9876*#",
-	database="alfred"
+	host="YOUR-MYSQL-HOST",
+	user="YOUR-MYSQL-USER",
+	passwd="YOUR-MYSQL-PASSWORD",
+	database="YOUR-DATABASE-NAME"
 )
 
 cursor = db.cursor()
@@ -18,7 +18,7 @@ cursor = db.cursor()
 def seperate_data():
 
 	# gets data from mysql database
-	cursor.execute("SELECT * FROM data_current")
+	cursor.execute("SELECT * FROM YOUR-TABLE")
 	data = cursor.fetchall()
 	data = pd.DataFrame(data)
 	data = data.dropna() # removes missing values
@@ -42,7 +42,7 @@ def seperate_data():
 	x_set = np.asmatrix(x_set)
 	y_set = np.asmatrix(y_set)
 
-	cursor.execute("SELECT * FROM data_coeff")
+	cursor.execute("SELECT * FROM YOUR-TABLE")
 	data = cursor.fetchall()
 	data = pd.DataFrame(data)
 	data = data.dropna()
@@ -112,9 +112,9 @@ for i in range(25000):
 	coeff = update(x, y, coeff, m, n)
 
 # update the coefficients into database
-cursor.execute("DELETE FROM data_coeff")
+cursor.execute("DELETE FROM YOUR-TABLE")
 db.commit()
-sql_temp = "INSERT INTO data_coeff (id, coeff_zero, coeff_one, coeff_two, coeff_three, coeff_four, coeff_five) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+sql_temp = "INSERT INTO YOUR-TABLE (id, coeff_zero, coeff_one, coeff_two, coeff_three, coeff_four, coeff_five) VALUES (%s, %s, %s, %s, %s, %s, %s)"
 row = np.array(coeff).tolist()[0]
 row.insert(0, 1)
 row = tuple(row)
