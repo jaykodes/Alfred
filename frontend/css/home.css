@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 2em 3em;
+    transition: all ease-in-out 500ms;
+    z-index: 2;
+}
+
+header.large {
+	background-color: none;
+}
+
+body {
+	margin: 0;
+	text-align: center;
+	font-family: "Optima", monospace;
+	animation: fadein 3s;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: 0;
+}
+
+p {
+	font-size: 1.5em;
+	font-weight: 300;
+}
+
+ul {
+	list-style: none;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	display: inline-block;
+	margin: 1em;
+}
+
+nav a {
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all ease-in-out 350ms;
+	font-size: 2em;
+	color: #000;
+}
+
+nav a:hover,
+nav a:focus {
+	color: #00ff6c;
+}
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    max-width: 70em;
+}
+
+.center-screen {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.title {
+    font-size: 6em;
+    font-weight: 600;
+    letter-spacing: 8px;
+}
+
+.title span {
+    font-weight: 250;
+    display: block;
+    font-size: .35em;
+    letter-spacing: 2px;
+}
+
+.home {
+	background-image: url(../images/background.jpeg);
+	background-size: cover;
+    background-position: center;
+	height: 100vh;
+	color: #000;
+	background-attachment: fixed;
+}
+
+.right-nav {
+	float: right;
+	font-size: .85rem;
+	padding: .5em;
+	font-weight: 300;
+}
+
+.button {
+    display: inline-block;
+    font-size: 1rem;
+    text-decoration: none;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: .5em 1.75em;
+    transition: all ease-in-out 350ms;
+    color: #000;
+    border-color: #000;
+}
+
+.button-home {
+    font-size: 1.1rem;
+}
+
+.button-home:hover,
+.button-home:focus {
+    background: #000;
+    color: #fff;
+}
