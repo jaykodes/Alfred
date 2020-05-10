@@ -4,16 +4,16 @@ import pandas as pd
 
 # establishing connection to database
 db = mysql.connector.connect(
-	host="alfred.c0cv0advg28x.us-east-2.rds.amazonaws.com",
-	user="admin",
-	passwd="AdCd9876*#",
-	database="alfred"
+	host="YOUR-MYSQL-HOST",
+	user="YOUR-MYSQL-USER",
+	passwd="YOUR-MYSQL-PASSWORD",
+	database="YOUR-DATABASE-NAME"
 )
 
 nlp = spacy.load("en")
 
 cursor = db.cursor()
-sql_temp = "INSERT INTO data_current (id, sentence, be_subjects, aux_subjects, question_words, verbs, subjects, sen_type) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+sql_temp = "INSERT INTO YOUR-TABLE (id, sentence, be_subjects, aux_subjects, question_words, verbs, subjects, sen_type) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
 
 #POS tag list:
 
