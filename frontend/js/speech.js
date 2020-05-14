@@ -10,7 +10,7 @@ function speak(speech) {
 
 function ajax_call(sentence) {
 
-	url_base = 'YOUR-SERVER';
+	url_base = 'http://ec2-3-21-113-14.us-east-2.compute.amazonaws.com/api/data/';
 	url_extra = sentence.split(' ').join('_')
 	url_actual = url_base.concat(url_extra);
 
